@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from "../components/Navbar";
-import addBook from "../components/addBook";
+import AddBook from "../components/AddBook";
 import Footer from "../components/Footer";
 
 function AddBookPage() {
@@ -8,7 +8,7 @@ function AddBookPage() {
         <>
             <Navbar />
             <div className="min-h-screen">
-                <addBook />
+                <AddBook />
             </div>
             <Footer />
         </>
