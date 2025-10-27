@@ -2,7 +2,6 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
-
 import bookRoute from "./route/book.route.js";
 import userRoute from "./route/user.route.js";
 import cartRoute from "./route/cart.route.js";
@@ -38,6 +37,13 @@ app.use("/book", bookRoute);
 app.use("/user", userRoute);
 app.use("/cart", cartRoute);
 
-app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
+// Root route
+app.get("/", (req, res) => {
+  res.send("📚 Book Swap API is running!");
 });
+
+// app.listen(PORT, () => {
+//     console.log(`Server is listening on port ${PORT}`);
+// });
+
+export default app;
