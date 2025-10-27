@@ -11,7 +11,7 @@ const Orders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get(`http://localhost:4001/user/${authUser._id}/orders`);
+                const response = await axios.get(`${process.env.BACKEND_URL}/user/${authUser._id}/orders`);
                 console.log(response.data); // Log the data to inspect the structure
                 setOrders(response.data);
             } catch (error) {

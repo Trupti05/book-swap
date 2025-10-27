@@ -37,7 +37,7 @@ const AddBook = () => {
             const newBook = { ...bookData, userId: authUser._id };
 
             // Make API request to add the book
-            const response = await axios.post('http://localhost:4001/book', newBook);
+            const response = await axios.post('${process.env.BACKEND_URL}/book', newBook);
 
             if (response.status === 201) {
                 toast.success('Book added successfully!');

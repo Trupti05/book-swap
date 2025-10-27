@@ -11,7 +11,7 @@ function SearchResults() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await axios.get(`http://localhost:4001/book/search?query=${query}`);
+        const res = await axios.get(`${process.env.BACKEND_URL}/book/search?query=${query}`);
         setBooks(res.data);
       } catch (error) {
         console.error("Error fetching search results: ", error);

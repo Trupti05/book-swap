@@ -12,7 +12,7 @@ const Cart = () => {
 
   useEffect(() => {
     if (authUser) {
-      axios.get(`http://localhost:4001/cart/${authUser._id}`)
+      axios.get(`${process.env.BACKEND_URL}/cart/${authUser._id}`)
         .then(response => {
           const items = response.data.items || [];
           console.log("Fetched Cart Items:", items);
@@ -32,7 +32,7 @@ const Cart = () => {
 
     try {
         console.log("Updating item:", itemId, "to quantity:", quantity); // Debug log
-        const response = await axios.put(`http://localhost:4001/cart/update/${authUser._id}/${itemId}`, { quantity });
+        const response = await axios.put(`${process.env.BACKEND_URL}/cart/update/${authUser._id}/${itemId}`, { quantity });
         console.log("Quantity update response:", response.data); // Log the response to verify it's successful
 
         // Update state only if the API call succeeds
@@ -48,7 +48,7 @@ const Cart = () => {
   // Remove item from cart
   const removeFromCart = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:4001/cart/remove/${authUser._id}/${itemId}`);
+      await axios.delete(`${process.env.BACKEND_URL}/cart/remove/${authUser._id}/${itemId}`);
       setCartItems(cartItems.filter(item => item._id !== itemId));
     } catch (error) {
       console.error("Error removing item from cart:", error);

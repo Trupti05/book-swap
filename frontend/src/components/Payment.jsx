@@ -17,7 +17,7 @@ const Payment = () => {
 
   useEffect(() => {
     if (authUser) {
-      axios.get(`http://localhost:4001/user/${authUser._id}`) 
+      axios.get(`${process.env.BACKEND_URL}/user/${authUser._id}`) 
         .then(response => {
           const address = response.data.user.address;
           setUserAddress(address || '');
@@ -58,7 +58,7 @@ const Payment = () => {
     };
 
     try {
-        await axios.put(`http://localhost:4001/user/${authUser._id}/orders`, { order });
+        await axios.put(`${process.env.BACKEND_URL}/user/${authUser._id}/orders`, { order });
 
         setOrderConfirmed(true);
         setTimeout(() => {

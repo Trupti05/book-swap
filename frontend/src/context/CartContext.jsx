@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
             }
             return prevCart;
         });
-        console.log('Current Cart:', { ...cart, [type]: [...cart[type], book] }); // Debugging line
+        console.log('Current Cart:', { ...cart, [type]: [...cart[type], book] });
     };
 
     return (

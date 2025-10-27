@@ -5,6 +5,7 @@ import profilePicture from './profile-picture.png'; // Keep this for the profile
 import { useAuth } from '../context/AuthProvider';
 import Cards from './Cards'; // Import the Cards component
 
+
 const Account = () => {
     const [authUser] = useAuth();
     const [userData, setUserData] = useState(null);
@@ -22,7 +23,7 @@ const Account = () => {
     useEffect(() => {
         if (authUser) {
             // Fetch user profile data
-            axios.get(`http://localhost:4001/user/${authUser._id}`)
+            axios.get(`${process.env.BACKEND_URL}/user/${authUser._id}`)
                 .then(response => {
                     setUserData(response.data.user);
                     setEditFormData(response.data.user); // Set form with fetched data

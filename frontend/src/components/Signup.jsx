@@ -31,7 +31,7 @@ function Signup() {
     };
 
     await axios
-      .post("http://localhost:4001/user/signup", userInfo)
+      .post("${process.env.BACKEND_URL}/user/signup", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

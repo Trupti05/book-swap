@@ -16,7 +16,7 @@ function Cards({ item }) {
 
     try {
       console.log("User ID:", authUser._id); // Check if the user ID is correct
-      const response = await axios.post('http://localhost:4001/cart/add', {
+      const response = await axios.post('${process.env.BACKEND_URL}/cart/add', {
         userId: authUser._id, // Use the user ID from authUser
         bookId: item._id,
         type,

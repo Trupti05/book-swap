@@ -10,7 +10,7 @@ function BookDetails() {
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await axios.get(`http://localhost:4001/book/${id}`);
+        const response = await axios.get(`${process.env.BACKEND_URL}/book/${id}`);
         setBook(response.data);
         setLoading(false);
       } catch (error) {
