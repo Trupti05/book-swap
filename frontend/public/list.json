@@ -1,0 +1,112 @@
+[
+    {
+        "id":1,
+        "name":"Atomic Habits",
+        "title":"An Easy & Proven Way to Build Good Habits & Break Bad Ones.",
+        "price":0,
+        "category":"Free",
+        "image":"https://jamesclear.com/wp-content/uploads/2020/11/atomic-habits_gallery_hi-res_01.jpg"
+        
+    },
+
+    {
+        "id":2,
+        "name":"Fantasy",
+        "title":"A book featuring fantasy stories.",
+        "price":50,
+        "category":"Story",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740"
+        
+    },
+
+    {
+        "id":3,
+        "name":"Story Book",
+        "title":"Story books with 50 stories.",
+        "price":0,
+        "category":"Free",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740."
+        
+    },
+
+    {
+        "id":4,
+        "name":"Atomic Habits",
+        "title":"An Easy & Proven Way to Build Good Habits & Break Bad Ones.",
+        "price":150,
+        "category":"Personal development",
+        "image":"https://jamesclear.com/wp-content/uploads/2020/11/atomic-habits_gallery_hi-res_01.jpg"
+        
+    },
+
+    {
+        "id":5,
+        "name":"Journal",
+        "title":"An Easy & Proven Way to Build Good Habits & Break Bad Ones.",
+        "price":0,
+        "category":"Diary",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740"
+        
+    },
+
+    {
+        "id":6,
+        "name":"Story Book",
+        "title":"Story books with 50 stories.",
+        "price":0,
+        "category":"Story",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740."
+        
+    },
+
+    {
+        "id":7,
+        "name":"Story Book",
+        "title":"Story books with 50 stories.",
+        "price":0,
+        "category":"Free",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740."
+        
+    },
+
+    {
+        "id":8,
+        "name":"Story Book",
+        "title":"Story books with 50 stories.",
+        "price":0,
+        "category":"Fantasy",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740."
+        
+    },
+
+    {
+        "id":9,
+        "name":"Story Book",
+        "title":"Story books with 50 stories.",
+        "price":0,
+        "category":"Fantasy",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740."
+        
+    },
+
+    {
+        "id":10,
+        "name":"Story Book",
+        "title":"Story books with 50 stories.",
+        "price":0,
+        "category":"Story",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740."
+        
+    },
+
+    {
+        "id":11,
+        "name":"Story Book",
+        "title":"Story books with 50 stories.",
+        "price":100,
+        "category":"Fantasy",
+        "image":"https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?t=st=1724258792~exp=1724262392~hmac=8dd3db74b66493d0d89af1c921c202cccf06ab458b715df7f8ec0de6e6c77f99&w=740."
+        
+    }
+
+]
