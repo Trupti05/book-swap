@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useAuth } from '../context/AuthProvider';
+import { apiEndpoints } from '../api/apiEnpoints';
 
 const Payment = () => {
   const location = useLocation();
@@ -17,7 +18,7 @@ const Payment = () => {
 
   useEffect(() => {
     if (authUser) {
-      axios.get(`${process.env.BACKEND_URL}/user/${authUser._id}`) 
+      axios.get(apiEndpoints.GET_USER_PROFILE(authUser._id))
         .then(response => {
           const address = response.data.user.address;
           setUserAddress(address || '');
@@ -58,7 +59,7 @@ const Payment = () => {
     };
 
     try {
-        await axios.put(`${process.env.BACKEND_URL}/user/${authUser._id}/orders`, { order });
+        await axios.put(apiEndpoints.GET_USER_ORDERS(authUser._id), { order });
 
         setOrderConfirmed(true);
         setTimeout(() => {

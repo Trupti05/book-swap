@@ -2,19 +2,18 @@ import React, { useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
 import axios from "axios";
-
 import Cards from "./Cards";
+import { apiEndpoints } from "../api/apiEnpoints";
+
 function Freebook() {
   const [book, setBook] = useState([]);
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("${process.env.BACKEND_URL}/book");
-
+        const res = await axios.get(apiEndpoints.GET_BOOKS);
         const data = res.data.filter((data) => data.price === 0);
-        console.log(data);
+        // console.log(data);
         setBook(data);
       } catch (error) {
         console.log(error);

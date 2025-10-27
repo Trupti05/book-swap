@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthProvider';
+import { apiEndpoints } from '../api/apiEnpoints';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -11,7 +12,7 @@ const Orders = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const response = await axios.get(`${process.env.BACKEND_URL}/user/${authUser._id}/orders`);
+                const response = await axios.get(apiEndpoints.GET_USER_ORDERS(authUser._id));
                 console.log(response.data); // Log the data to inspect the structure
                 setOrders(response.data);
             } catch (error) {

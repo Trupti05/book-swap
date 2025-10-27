@@ -5,6 +5,7 @@ import Login from "./Login";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { apiEndpoints } from "../api/apiEnpoints";
 
 function Signup() {
   const location = useLocation();
@@ -31,7 +32,7 @@ function Signup() {
     };
 
     await axios
-      .post("${process.env.BACKEND_URL}/user/signup", userInfo)
+      .post(apiEndpoints.SIGNUP, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {

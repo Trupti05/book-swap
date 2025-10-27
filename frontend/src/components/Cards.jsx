@@ -1,12 +1,13 @@
 import React from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from '../context/AuthProvider'; // Import useAuth
+import { useAuth } from '../context/AuthProvider';
 import toast from "react-hot-toast";
+import { apiEndpoints } from "../api/apiEnpoints";
 
 function Cards({ item }) {
-  const [authUser] = useAuth(); // Get the current authenticated user
-  const navigate = useNavigate(); // Get the navigate function
+  const [authUser] = useAuth();
+  const navigate = useNavigate();
 
   const handleAddToCart = async (type) => {
     if (!authUser) {
@@ -15,15 +16,15 @@ function Cards({ item }) {
     }
 
     try {
-      console.log("User ID:", authUser._id); // Check if the user ID is correct
-      const response = await axios.post('${process.env.BACKEND_URL}/cart/add', {
-        userId: authUser._id, // Use the user ID from authUser
+      // console.log("User ID:", authUser._id);
+      const response = await axios.post(apiEndpoints.ADD_TO_CART, {
+        userId: authUser._id,
         bookId: item._id,
         type,
         price: item.price,
       });
-      toast.success(response.data.message); // Show success message
-      navigate('/cart'); // Navigate to the cart page
+      toast.success(response.data.message);
+      navigate('/cart');
     } catch (error) {
       console.error('Error adding book to cart:', error);
       toast.error('Failed to add book to cart.');
@@ -31,7 +32,7 @@ function Cards({ item }) {
   };
 
   const handleCardClick = () => {
-    console.log("Book ID:", item._id); // Check the book ID being passed
+    console.log("Book ID:", item._id);
     navigate(`/book/${item._id}`);
   };
   
@@ -39,7 +40,7 @@ function Cards({ item }) {
     <div className="mt-4 my-3 p-3 flex justify-center">
       <div
         className="card w-full max-w-xs bg-white text-black shadow-xl hover:scale-105 duration-200 dark:bg-slate-900 dark:text-white dark:border cursor-pointer transition-transform transform-gpu"
-        onClick={handleCardClick} // Add onClick to handle redirection
+        onClick={handleCardClick}
       >
         <figure>
           <img src={item.image} alt="Book" className="object-cover h-60 w-full rounded-t-lg" />
@@ -55,13 +56,13 @@ function Cards({ item }) {
             <div className="badge badge-outline text-lg">Rs.{item.price}</div>
             <div className="flex space-x-2">
               <button
-                onClick={(e) => { e.stopPropagation(); handleAddToCart('buy'); }} // Stop event propagation to prevent triggering card click
+                onClick={(e) => { e.stopPropagation(); handleAddToCart('buy'); }}
                 className="bg-pink-500 text-white font-medium px-3 py-1 rounded-full hover:bg-pink-600 transition-colors duration-200"
               >
                 Buy Now
               </button>
               <button
-                onClick={(e) => { e.stopPropagation(); handleAddToCart('rent'); }} // Stop event propagation to prevent triggering card click
+                onClick={(e) => { e.stopPropagation(); handleAddToCart('rent'); }}
                 className="bg-pink-500 text-white font-medium px-3 py-1 rounded-full hover:bg-pink-600 transition-colors duration-200"
               >
                 Rent

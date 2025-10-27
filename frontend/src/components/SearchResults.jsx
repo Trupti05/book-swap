@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Cards from "./Cards";
+import { apiEndpoints } from "../api/apiEnpoints";
 
 function SearchResults() {
   const [books, setBooks] = useState([]);
@@ -11,7 +12,7 @@ function SearchResults() {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const res = await axios.get(`${process.env.BACKEND_URL}/book/search?query=${query}`);
+        const res = await axios.get(apiEndpoints.SEARCH_BOOKS(query));
         setBooks(res.data);
       } catch (error) {
         console.error("Error fetching search results: ", error);

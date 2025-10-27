@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { apiEndpoints } from "../api/apiEnpoints";
 
 function BookDetails() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ function BookDetails() {
   useEffect(() => {
     const fetchBookDetails = async () => {
       try {
-        const response = await axios.get(`${process.env.BACKEND_URL}/book/${id}`);
+        const response = await axios.get(apiEndpoints.GET_BOOK_DETAILS(id));
         setBook(response.data);
         setLoading(false);
       } catch (error) {

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { apiEndpoints } from '../api/apiEnpoints';
 
 const AddBook = () => {
     const [authUser] = useAuth();
@@ -13,8 +14,7 @@ const AddBook = () => {
         image: '',
         title: ''
     });
-    const navigate = useNavigate(); // Initialize navigate
-
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -37,7 +37,7 @@ const AddBook = () => {
             const newBook = { ...bookData, userId: authUser._id };
 
             // Make API request to add the book
-            const response = await axios.post('${process.env.BACKEND_URL}/book', newBook);
+            const response = await axios.post(apiEndpoints.ADD_BOOK, newBook);
 
             if (response.status === 201) {
                 toast.success('Book added successfully!');

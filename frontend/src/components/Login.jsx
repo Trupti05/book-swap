@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { apiEndpoints } from "../api/apiEnpoints";
 
 function Login() {
   const {
@@ -17,7 +18,7 @@ function Login() {
       password: data.password,
     };
     await axios
-      .post("${process.env.BACKEND_URL}/user/login", userInfo)
+      .post(apiEndpoints.LOGIN, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
