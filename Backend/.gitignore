@@ -18,6 +18,7 @@ coverage-final.json
 *.map
 
 # Environment files
+.env
 .env.*.local
 .env.local
 .env.production
