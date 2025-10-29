@@ -63,7 +63,7 @@ function Login() {
                 {...register("email", { required: true })}
               />
               {errors.email && (
-                <span className="text-sm text-red-500">
+                <span className="text-xs text-red-500 ml-2">
                   This field is required
                 </span>
               )}
@@ -78,7 +78,7 @@ function Login() {
                 {...register("password", { required: true })}
               />
               {errors.password && (
-                <span className="text-sm text-red-500">
+                <span className="text-xs text-red-500 ml-2">
                   This field is required
                 </span>
               )}

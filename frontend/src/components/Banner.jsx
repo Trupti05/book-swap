@@ -1,5 +1,6 @@
 import React from "react";
 import banner from "../../src/assets/Banner.png";
+import { FaArrowRight, FaEnvelope } from "react-icons/fa";
 function Banner() {
   return (
     <>
@@ -11,24 +12,29 @@ function Banner() {
               <span className="text-pink-500"> everyday!!!</span>
             </h1>
             <p className="text-sm md:text-xl">
-            The project seeks to create a digital platform that enables seamless book exchanges, 
+            BookSwap is a digital platform that enables seamless book exchanges, 
             promoting sustainability, inclusivity, and community connections through
             user-friendly design, robust security, and personalized recommendations.
             </p>
-            <label className="input input-bordered flex items-center bg-white text-black gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-                className="w-4 h-4 opacity-70"
-              >
-                <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z" />
-                <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z" />
-              </svg>
-              <input type="text" className="grow" placeholder="Email" />
-            </label>
+            {/* Email Input */}
+        <div className="flex items-center bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full shadow-md px-4 py-2 focus-within:ring-2 focus-within:ring-pink-500 transition-all duration-300">
+          <FaEnvelope className="text-pink-500 text-lg mr-3" />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="bg-transparent outline-none flex-grow text-gray-700 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
+          />
+        </div>
+
+        {/* CTA Button */}
+        <a
+          href="/Signup"
+          className="inline-flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 py-3 rounded-full shadow-md transition-all duration-300"
+        >
+          Get Started <FaArrowRight className="text-sm" />
+        </a>
           </div>
-          <button className="btn mt-6 btn-secondary"> <a href="/Signup"> Get Started</a></button>
+          {/* <button className="btn mt-6 btn-secondary"> <a href="/Signup"> Get Started</a></button> */}
         </div>
         <div className=" order-1 w-full mt-20 md:w-1/2">
           <img
