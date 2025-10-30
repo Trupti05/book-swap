@@ -31,15 +31,15 @@ function Course() {
         transition={{ duration: 0.6 }}
       >
         <div className="flex justify-center mb-3">
-          <FaBookReader className="text-4xl text-pink-500" />
+          {/* <FaBookReader className="text-4xl text-pink-500" /> */}
         </div>
         <h1 className="text-2xl md:text-4xl font-semibold">
           We're delighted to have you{" "}
-          <span className="text-pink-500">Here! :)</span>
+          <span className="text-pink-500">Here!</span>
         </h1>
         <p className="mt-3 text-gray-600 dark:text-gray-300 text-sm md:text-base max-w-2xl mx-auto">
           Here is the list of books you can buy or rent — and you can even post your own!  
-          Let’s make reading fun and accessible for everyone. 📚✨
+          Let’s make reading fun and accessible for everyone.
         </p>
         <Link to="/">
           <button className="mt-6 flex items-center justify-center gap-2 bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors duration-300 mx-auto">
